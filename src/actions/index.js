@@ -15,8 +15,8 @@ export const toggleTodo = (id) => ({
   id
 })
 
-export const getPage = (data) => ({
-	type: 'GET_PAGE',
+export const getPark = (data) => ({
+	type: 'GET_PARK',
 	data
 })
 

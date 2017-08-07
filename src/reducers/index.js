@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
 import todos from './todos'
 import visibilityFilter from './visibilityFilter'
-import getPage from './getPage'
+import getPark from './getPark'
 
 const todoApp = combineReducers({
   todos,
   visibilityFilter,
-  getPage
+  getPark
 })
 
 export default todoApp
