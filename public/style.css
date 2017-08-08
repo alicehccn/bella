@@ -1,0 +1,16 @@
+
+body {
+	
+}
+
+.list-container {
+	background-color: #eee;
+}
+
+.list-item {
+	width: 200px;
+	height: auto;
+	float: left;
+	margin: 10px;
+	border: #aaa dotted 1px;
+}
