@@ -1,16 +1,19 @@
 
 body {
-	
-}
-
-.list-container {
 	background-color: #eee;
 }
 
+.list-container {
+	width: 80%;
+	margin: auto;
+}
+
 .list-item {
-	width: 200px;
+	background-color: #fff;
+	width: auto;
 	height: auto;
 	float: left;
 	margin: 10px;
+	padding: 15px;
 	border: #aaa dotted 1px;
 }
