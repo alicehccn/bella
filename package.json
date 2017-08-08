@@ -3,6 +3,8 @@
   "description": "A geo-location app",
   "version": "0.0.17",
   "dependencies": {
+    "node-sass": "^4.5.3",
+    "node-sass-chokidar": "0.0.3",
     "prop-types": "15.5.10",
     "react": "15.6.1",
     "react-bootstrap": "^0.31.2",

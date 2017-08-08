@@ -20,6 +20,25 @@ export const getPark = (data) => ({
 	data
 })
 
+// export const getPark = (url) => {
+//   return dispatch => {
+//     dispatch({ type: 'GET_PARK', loading: true });
+//     return new Promise(resolve => {
+//       superagent.get(url)
+//       .end((error, response) => {
+//         if(error) {
+//           console.error(error);
+//         }
+//         else {
+//           const data = JSON.parse(response.text).data;
+//           dispatch({ type: 'GET_PARK', data });
+//         }
+//         resolve();
+//       });
+//     });
+//   }
+// }
+
 export const setHourFilter = (filter) => ({
 	type: 'SET_HOUR_Filter',
 	filter

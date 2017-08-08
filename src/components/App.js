@@ -8,9 +8,6 @@ import GetPark from '../containers/GetPark'
 const App = () => (
   <div>
   	<GetPark />
-    <AddTodo />
-    <VisibleTodoList />
-    <Footer />
   </div>
 )
 

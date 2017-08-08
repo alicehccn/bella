@@ -7,6 +7,7 @@ export default class Park extends React.Component {
   static displayName = 'Park';
 
   static PropTypes = {
+    className: PropTypes.string.isRequired,
   	pmaid: PropTypes.number.isRequired,
   	name: PropTypes.string.isRequired,
   	feature_desc: PropTypes.string.isRequired,
@@ -15,10 +16,9 @@ export default class Park extends React.Component {
   }
 
   render() {
-  	const { pmaid, name, feature_desc, hours, location } = this.props;
+  	const { className, pmaid, name, feature_desc, hours, location } = this.props;
 		return (
-			<div className="">
-		  	<div>{pmaid}</div>
+			<div className={className} key={pmaid}>
 		  	<div>{name}</div>
 		  	<div>{feature_desc}</div>
 		  	<div>{hours}</div>
