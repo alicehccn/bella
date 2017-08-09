@@ -1,6 +1,18 @@
 
-body {
-	background-color: lightblue;
+#root {
+	background-color: lightskyblue;
+}
+
+.navbar {
+	background-color: darkblue;
+	color: #fff;
+	display: flex;
+}
+
+.header {
+	margin:auto;
+	width: 75%;
+	height: 8rem;
 }
 
 .page-wrapper {
@@ -12,17 +24,18 @@ body {
 .list-container {
 	/*background-color: lightblue;*/
 	flex-direction: row;
-    padding-right: 5rem;
-    /*-ms-flex: 1 1 24rem;*/
-    /*flex: 1 1 2rem;*/
-    margin-bottom: 1rem;
-    margin-left: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
-    flex-flow: row wrap;
+  padding-right: 5rem;
+  /*-ms-flex: 1 1 24rem;*/
+  /*flex: 1 1 2rem;*/
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-flow: row wrap;
+  min-width: 75%;
 }
 
 .list-item {
@@ -37,15 +50,20 @@ body {
 
 .sidebar {
 	background-color: #fff;
-    flex-basis: 150rem;
-    box-sizing: content-box;
-    display: -ms-flexbox;
-    display: flex;
-    /*-ms-flex-direction: column;*/
-    flex-direction: column;
-    margin-bottom: 1rem;
-    /*-ms-flex-align: center;*/
-    align-items: center;
+  flex-basis: 150rem;
+  box-sizing: content-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*-ms-flex-direction: column;*/
+  flex-direction: column;
+  margin-bottom: 1rem;
+  /*-ms-flex-align: center;*/
+  align-items: center;
+  min-width: 25%;
+}
+
+.sidebar-item {
+	margin-bottom: 1rem;
 }
 
 .sidebar-item:hover {
@@ -55,3 +73,12 @@ body {
 .sidebar-items:active {
 	color: black;
 }
+
+.selector {
+	width: 70%;
+	min-height: 10rem;
+	border: #aaa solid 1px;
+}
+
+
+
