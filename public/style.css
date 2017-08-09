@@ -1,11 +1,28 @@
 
 body {
-	background-color: #eee;
+	background-color: lightblue;
+}
+
+.page-wrapper {
+	width: 75%;
+	margin: 0 auto;
+	display: flex;
 }
 
 .list-container {
-	width: 80%;
-	margin: auto;
+	/*background-color: lightblue;*/
+	flex-direction: row;
+    padding-right: 5rem;
+    /*-ms-flex: 1 1 24rem;*/
+    /*flex: 1 1 2rem;*/
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-flow: row wrap;
 }
 
 .list-item {
@@ -13,7 +30,28 @@ body {
 	width: auto;
 	height: auto;
 	float: left;
-	margin: 10px;
-	padding: 15px;
-	border: #aaa dotted 1px;
+	margin: 0 1rem 2rem;
+	padding: 5rem;
+
+}
+
+.sidebar {
+	background-color: #fff;
+    flex-basis: 150rem;
+    box-sizing: content-box;
+    display: -ms-flexbox;
+    display: flex;
+    /*-ms-flex-direction: column;*/
+    flex-direction: column;
+    margin-bottom: 1rem;
+    /*-ms-flex-align: center;*/
+    align-items: center;
+}
+
+.sidebar-item:hover {
+	cursor: pointer;
+}
+
+.sidebar-items:active {
+	color: black;
 }

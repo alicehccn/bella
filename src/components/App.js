@@ -3,11 +3,12 @@ import Footer from './Footer'
 import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
 
-import GetPark from '../containers/GetPark'
+import ParkCards from './ParkCards';
+import SideBar from './SideBar';
 
 const App = () => (
   <div>
-  	<GetPark />
+  	<ParkCards />
   </div>
 )
 

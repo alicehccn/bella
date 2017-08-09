@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 
 const Link = ({ active, children, onClick }) => {
   if (active) {
+    console.log(children)
     return <span>{children}</span>
   }
-
+  console.log(this.state)
   return (
     // eslint-disable-next-line
     <a href="#"
