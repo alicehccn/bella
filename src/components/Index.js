@@ -14,7 +14,7 @@ export default class Index extends React.Component {
       getPark: [],
       isLoading: true,
       filteredPark: [],
-      features: new Set()
+      features: []
     }
   }
 
@@ -34,29 +34,26 @@ export default class Index extends React.Component {
     })
   }
 
-  onClick(feature) {
+  addClick(feature) {
     const parkWithFeature = this.filterByFeature(this.state.getPark, feature)
     if (this.state.filteredPark.length === this.state.getPark.length) {
       this.setState({
         filteredPark: parkWithFeature,
       })
     } else {
-      // this.state.filteredPark.concat(parkWithFeature)
       this.setState({
         filteredPark: this.state.filteredPark.concat(parkWithFeature)
       })
-      // console.log()
     }
-    // } else {
-    //   this.state.filteredPark.unshift(this.filterByFeature(this.state.getPark, feature))
-    //   this.setState({
-    //     filteredPark: this.state.filteredPark
-    //   })
-    //   console.log(this.state.filteredPark)
-    // }
-    // // console.log(this.state.filteredPark)
+    this.state.features.push(feature)
+    console.log(this.state.features)
+  }
 
-    this.state.features.add(feature)
+  removeClick(selector) {
+    this.setState({
+      features: this.state.features.splice(this.state.features.indexOf(selector), 1),
+    })
+    console.log(this.state.features)
   }
    
 
@@ -69,20 +66,30 @@ export default class Index extends React.Component {
 		return (
       !this.state.isLoading && 
         <div className="page-wrapper">
-    			<SideBar onClick={this.onClick.bind(this, 'Basketball')}>
-            <Selector>
-              <span>{this.state.features}</span>
+
+    			<SideBar>
+            <Selector >
+              {this.state.features.map((feature, i) => 
+                <button 
+                  className="selector" 
+                  key={i}
+                  onClick={this.removeClick.bind(this, feature)}>
+                  {feature}
+                </button>
+                )}
             </Selector>
+
             {features.map((feature, i) => {
               return (
                 <a 
                   className="sidebar-item"
-                  onClick={this.onClick.bind(this, feature)}
+                  onClick={this.addClick.bind(this, feature)}
                   key={i}>
                   {feature}
                 </a>)
             })}
           </SideBar>
+
           <div className="list-container">
             {parks.map((park)=> {
               return (

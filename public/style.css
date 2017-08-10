@@ -74,11 +74,14 @@
 	color: black;
 }
 
-.selector {
+.selector-container {
 	width: 70%;
 	min-height: 10rem;
 	border: #aaa solid 1px;
 }
 
+.selector-container {
+	
+}
 
 

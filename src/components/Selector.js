@@ -11,9 +11,8 @@ export default class Selector extends React.Component {
   }
 
   render() {
-  	const { children } = this.props;
 		return (
-			<div className="selector">
+			<div className="selector-container">
 		  	{this.props.children}
 			</div>
 		);  	
