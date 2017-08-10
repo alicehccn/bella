@@ -8,9 +8,7 @@ export default class Feature extends React.Component {
   static PropTypes = {
     item: PropTypes.string.isRequired,
   }
-
 	render(){
-		
 		return (
 			<div>{this.props.item}</div>
 		)

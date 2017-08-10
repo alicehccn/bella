@@ -4,6 +4,16 @@ import Park from './Park';
 import SideBar from './SideBar';
 import Selector from './Selector';
 
+/*
+Todo:
+- style park card
+-
+*/
+
+const FEATURES = [
+  'Fitness', 'Baseball', 'Basketball', 'Bike', 'Boat', 'Community', 'Creek', 'Cricket', 'Decorative Fountain', 'Disc Golf', 'Dog Off Leash Area', 'Fire Pit', 'Fishing', 'Football', 'Garden', 'Golf', 'Green Space', 'Beach', 'Hiking Trails', 'Historic Landmark', 'Horseshoe Pits', 'Lacrosse', 'Lawn Bowling', 'Marination Ma Kai', 'Garden', 'Paths', 'Pesticide Free', 'Pickleball', 'Picnic', 'Play Area', 'Pool', 'Rental Facility', 'Restrooms', 'Rugby', 'Scuba Diving', 'Skatepark', 'Skatespot', 'Soccer', 'T-Ball', 'Tennis', 'Track', 'Ultimate', 'View', 'Waterfront', 'Ceremonies', 'Woods'
+];
+
 export default class Index extends React.Component {
 
   static displayName = 'Index';
@@ -42,17 +52,18 @@ export default class Index extends React.Component {
 
   addClick(feature) {
     const addedFeature = this.filterByFeature(this.state.getPark, feature)
-    if (this.state.filteredPark.length === this.state.getPark.length) {
-      this.setState({
-        filteredPark: addedFeature,
-      })
-    } else {
-      this.setState({
-        filteredPark: this.state.filteredPark.concat(addedFeature)
-      })
+    if (!this.state.features.includes(feature)) {
+      if (this.state.filteredPark.length === this.state.getPark.length) {
+        this.setState({
+          filteredPark: addedFeature,
+        })
+      } else {
+        this.setState({
+          filteredPark: this.state.filteredPark.concat(addedFeature)
+        })
+      }
+      this.state.features.push(feature)
     }
-    this.state.features.push(feature)
-    console.log(this.state.features)
   }
 
   removeClick(selector) {
@@ -62,7 +73,6 @@ export default class Index extends React.Component {
       features: this.state.features,
       filteredPark: removedFeature
     })
-    console.log(this.state.features)
   }
    
 
@@ -73,10 +83,8 @@ export default class Index extends React.Component {
     } else {
       parks = this.state.getPark;
     }
-    const features = [
-      'Fitness', 'Baseball', 'Basketball', 'Bike', 'Boat', 'Community', 'Creek', 'Cricket', 'Decorative Fountain', 'Disc Golf', 'Dog Off Leash Area', 'Fire Pit', 'Fishing', 'Football', 'Garden', 'Golf', 'Green Space', 'Beach', 'Hiking Trails', 'Historic Landmark', 'Horseshoe Pits', 'Lacrosse', 'Lawn Bowling', 'Marination Ma Kai', 'Garden', 'Paths', 'Pesticide Free', 'Pickleball', 'Picnic', 'Play Area', 'Pool', 'Rental Facility', 'Restrooms', 'Rugby', 'Scuba Diving', 'Skatepark', 'Skatespot', 'Soccer', 'T-Ball', 'Tennis', 'Track', 'Ultimate', 'View', 'Waterfront', 'Ceremonies', 'Woods'
-    ];
-    // parks = parks.slice(0, 20)
+    parks = parks.slice(0, 20)
+
 		return (
       !this.state.isLoading && 
         <div className="page-wrapper">
@@ -93,7 +101,7 @@ export default class Index extends React.Component {
                 )}
             </Selector>
 
-            {features.map((feature, i) => {
+            {FEATURES.map((feature, i) => {
               return (
                 <a 
                   className="sidebar-item"
