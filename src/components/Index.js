@@ -24,7 +24,7 @@ export default class Index extends React.Component {
     .then(json => this.setState({
       getPark: json.data,
       isLoading: false,
-      filteredPark: json.data
+      filteredPark: []
     }));
   }
 
@@ -34,15 +34,21 @@ export default class Index extends React.Component {
     })
   }
 
+  removeFeature(rows, feature) {
+    return rows.filter((row) => {
+      return !row[10].toLowerCase().includes(feature.toLowerCase());
+    })
+  }
+
   addClick(feature) {
-    const parkWithFeature = this.filterByFeature(this.state.getPark, feature)
+    const addedFeature = this.filterByFeature(this.state.getPark, feature)
     if (this.state.filteredPark.length === this.state.getPark.length) {
       this.setState({
-        filteredPark: parkWithFeature,
+        filteredPark: addedFeature,
       })
     } else {
       this.setState({
-        filteredPark: this.state.filteredPark.concat(parkWithFeature)
+        filteredPark: this.state.filteredPark.concat(addedFeature)
       })
     }
     this.state.features.push(feature)
@@ -50,15 +56,23 @@ export default class Index extends React.Component {
   }
 
   removeClick(selector) {
+    this.state.features.splice(this.state.features.indexOf(selector), 1);
+    const removedFeature = this.removeFeature(this.state.filteredPark, selector);
     this.setState({
-      features: this.state.features.splice(this.state.features.indexOf(selector), 1),
+      features: this.state.features,
+      filteredPark: removedFeature
     })
     console.log(this.state.features)
   }
    
 
   render() {
-    let parks = this.state.filteredPark;
+    let parks;
+    if (this.state.filteredPark.length > 0) {
+      parks = this.state.filteredPark;
+    } else {
+      parks = this.state.getPark;
+    }
     const features = [
       'Fitness', 'Baseball', 'Basketball', 'Bike', 'Boat', 'Community', 'Creek', 'Cricket', 'Decorative Fountain', 'Disc Golf', 'Dog Off Leash Area', 'Fire Pit', 'Fishing', 'Football', 'Garden', 'Golf', 'Green Space', 'Beach', 'Hiking Trails', 'Historic Landmark', 'Horseshoe Pits', 'Lacrosse', 'Lawn Bowling', 'Marination Ma Kai', 'Garden', 'Paths', 'Pesticide Free', 'Pickleball', 'Picnic', 'Play Area', 'Pool', 'Rental Facility', 'Restrooms', 'Rugby', 'Scuba Diving', 'Skatepark', 'Skatespot', 'Soccer', 'T-Ball', 'Tennis', 'Track', 'Ultimate', 'View', 'Waterfront', 'Ceremonies', 'Woods'
     ];
