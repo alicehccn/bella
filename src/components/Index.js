@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Park from './Park';
+import Parks from './Parks';
 import SideBar from './SideBar';
 import Selector from './Selector';
 
 /*
 Todo:
-- style park card
--
+- get current geo
 */
 
 const FEATURES = [
@@ -112,24 +111,9 @@ export default class Index extends React.Component {
             })}
           </SideBar>
 
-          <div className="list-container">
-            {parks.map((park)=> {
-              return (
-                <Park
-                  key={park[0]}
-                  className="list-item"
-                  name={park[9]}
-                  feature_desc={park[10]}
-                  // hours={park[11]}
-                  location={park[14]}
-                />)
-            })}
-    			</div>
-          
+          <Parks parks={parks} />
+            
         </div>
-      
-
-
 		);  
     
   }
