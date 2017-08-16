@@ -50,10 +50,11 @@ export default class Index extends React.Component {
   }
 
   removeClick(selector) {
+    this.state.features.splice(this.state.features.indexOf(selector), 1)
     this.setState({
-      features: this.state.features.splice(this.state.features.indexOf(selector), 1),
+      features: this.state.features,
     })
-    console.log(this.state.features)
+    // console.log(this.state.features)
   }
    
 

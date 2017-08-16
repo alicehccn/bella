@@ -1,11 +1,13 @@
 
 #root {
-	background-color: lightskyblue;
+	background-color: bisque;
+    border: purple solid 25px;
+    border-radius: 10px;
 }
 
 .navbar {
-	background-color: darkblue;
-	color: #fff;
+	/*background-color: darkblue;*/
+	/*color: #fff;*/
 	display: flex;
 }
 
@@ -39,7 +41,7 @@
 }
 
 .list-item {
-	background-color: #fff;
+	background-color: darksalmon;
 	width: auto;
 	height: auto;
 	float: left;
@@ -49,7 +51,7 @@
 }
 
 .sidebar {
-	background-color: #fff;
+  /*background-color: darksalmon;*/
   flex-basis: 150rem;
   box-sizing: content-box;
   display: -ms-flexbox;

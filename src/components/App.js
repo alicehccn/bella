@@ -8,7 +8,6 @@ import Header from './Header';
 
 const App = () => (
   <div>
-  	<Header />
   	<Index />
   </div>
 )
