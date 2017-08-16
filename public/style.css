@@ -55,7 +55,7 @@
 }
 
 .sidebar-item, .sidebar-item--selected{
-  border: #337ab7 solid 1px;
+  /*border: #337ab7 solid 1px;*/
   background-color: cornsilk;
   border-radius: 40px;
 	margin: 10px;

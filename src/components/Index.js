@@ -7,6 +7,8 @@ import Selector from './Selector';
 /*
 Todo:
 - get current geo
+https://maps.googleapis.com/maps/api/geocode/json?latlng=47.577953,-122.317765&key=AIzaSyBOwsAlwsH2xx5NTSR6Q9Ux_TqikyNtjm4
+
 */
 
 const FEATURES = [
@@ -48,7 +50,7 @@ export default class Index extends React.Component {
       return !row[10].toLowerCase().includes(feature.toLowerCase());
     })
   }
-
+  
   handleClick(feature) {
     const addedFeature = this.addFeature(this.state.getPark, feature)
     if (!this.state.features.includes(feature)) {
@@ -72,22 +74,30 @@ export default class Index extends React.Component {
     }
   }
 
+  comparator(a, b) {
+    if (a[9] < b[9]) {
+      return -1;
+    }
+    if (a[9] > b[9]) {
+      return 1;
+    }
+    return 0;
+  }
+
   render() {
-    console.log(FEATURES.length)
     let parks;
     if (this.state.filteredPark.length > 0) {
       parks = this.state.filteredPark;
     } else {
       parks = this.state.getPark;
     }
+    parks = parks.sort(this.comparator);
     // parks = parks.slice(0, 20)
 
 		return (
       !this.state.isLoading && 
         <div className="page-wrapper">
-
     			<SideBar>
-            
             {FEATURES.map((feature, i) => {
               return (
                 <button 
@@ -99,7 +109,6 @@ export default class Index extends React.Component {
             })}
 
           </SideBar>
-
           <Parks parks={parks} />
             
         </div>
