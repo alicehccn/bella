@@ -20,15 +20,12 @@
 .page-wrapper {
 	width: 75%;
 	margin: 0 auto;
-	display: flex;
+	/*display: flex;*/
 }
 
 .list-container {
-	/*background-color: lightblue;*/
 	flex-direction: row;
   padding-right: 5rem;
-  /*-ms-flex: 1 1 24rem;*/
-  /*flex: 1 1 2rem;*/
   margin-bottom: 1rem;
   margin-left: 2rem;
   display: flex;
@@ -51,21 +48,16 @@
 }
 
 .sidebar {
-  /*background-color: darksalmon;*/
-  flex-basis: 150rem;
-  box-sizing: content-box;
-  display: -ms-flexbox;
   display: flex;
-  /*-ms-flex-direction: column;*/
-  flex-direction: column;
-  margin-bottom: 1rem;
-  /*-ms-flex-align: center;*/
-  align-items: center;
-  min-width: 25%;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .sidebar-item {
-	margin-bottom: 1rem;
+  border: gray solid 1px;
+  border-radius: 50px;
+	margin: 10px;
+  padding: 5px 10px;
 }
 
 .sidebar-item:hover {

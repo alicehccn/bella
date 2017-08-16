@@ -89,6 +89,18 @@ export default class Index extends React.Component {
         <div className="page-wrapper">
 
     			<SideBar>
+            
+            {FEATURES.map((feature, i) => {
+              return (
+                <span className="sidebar-item">
+                  <a 
+                    onClick={this.addClick.bind(this, feature)}
+                    key={i}>
+                    {feature}
+                  </a>
+                </span>)
+            })}
+
             <Selector >
               {this.state.features.map((feature, i) => 
                 <button 
@@ -100,15 +112,6 @@ export default class Index extends React.Component {
                 )}
             </Selector>
 
-            {FEATURES.map((feature, i) => {
-              return (
-                <a 
-                  className="sidebar-item"
-                  onClick={this.addClick.bind(this, feature)}
-                  key={i}>
-                  {feature}
-                </a>)
-            })}
           </SideBar>
 
           <Parks parks={parks} />
