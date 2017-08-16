@@ -51,31 +51,30 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 20px;
 }
 
-.sidebar-item {
-  border: gray solid 1px;
-  border-radius: 50px;
+.sidebar-item, .sidebar-item--selected{
+  border: #337ab7 solid 1px;
+  background-color: cornsilk;
+  border-radius: 40px;
 	margin: 10px;
-  padding: 5px 10px;
+  padding: 5px 15px;
+  outline: none;
+}
+
+.sidebar-item--selected {
+  background-color: #337ab7;
+  color: #fff;
+}
+
+.sidebar-item--selected a {
+  color: #fff;
 }
 
 .sidebar-item:hover {
 	cursor: pointer;
 }
 
-.sidebar-items:active {
-	color: black;
-}
-
-.selector-container {
-	width: 70%;
-	min-height: 10rem;
-	border: #aaa solid 1px;
-}
-
-.selector-container {
-	
-}
 
 
